@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>ocaml-extlib-root</artifactId>
+		<groupId>com.google.code</groupId>
+		<version>1.6.2-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>ocaml-extlib</artifactId>
+	<packaging>jar</packaging>
+	<name>Ocaml ExtLib</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>mandelbrot</groupId>
+				<artifactId>ocamljava-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>ocaml-compile</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>ocaml-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+		</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>fr.x9c</groupId>
+			<artifactId>ocamljava</artifactId>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+
+</project>
